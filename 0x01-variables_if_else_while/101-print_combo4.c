@@ -1,27 +1,31 @@
 #include <stdio.h>
 /**
- * main - Entry point
- *
+ * main - 100
+ * Aladin Bensassi
  * Return: Always 0 (Success)
  */
 int main(void)
-{int huns, tens, ones;
-for (huns = '0'; huns <= '7'; huns++)
 {
-for (tens = huns + 1; tens <= '8'; tens++)
+int first;
+int second;
+int count = 49;
+for (first = 48; first <= 57; first++)
 {
-for (ones = tens + 1; ones <= '9'; ones++)
+for (second = count; second <= 57; second++)
 {
-putchar(huns);
-putchar(tens);
-putchar(ones);
-if (huns != '7')
+putchar(first);
+putchar(second);
+if (first == 56 && second == 57)
+{
+return (0);
+}
+if (first != 56 || second != 57)
 {
 putchar(',');
 putchar(' ');
 }
 }
-}
+count++;
 }
 putchar('\n');
 return (0);
