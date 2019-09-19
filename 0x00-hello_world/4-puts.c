@@ -1,8 +1,8 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- * print message
- * Return: Always 0 (Success)
+ * main - Printing something on the screen with PUTS
+ * Return: Always 0 (Sucess)
  */
 int main(void)
 {
