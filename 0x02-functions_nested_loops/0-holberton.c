@@ -1,4 +1,4 @@
-int printf(const char *format, ...);
+#include "holberton.h"
 /**
  * main - Entry point
  *
