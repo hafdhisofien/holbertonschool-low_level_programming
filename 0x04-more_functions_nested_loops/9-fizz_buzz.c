@@ -6,16 +6,20 @@
  */
 int main(void)
 {
-int i;
-for (i = 1; i <= 100; ++i)
+int count;
+for (count = 1; count <= 100; count++)
 {
-if (i % 3 == 0)
-printf("Fizz");
-if (i % 5 == 0)
+if ((count % 3) == 0 && (count % 5) != 0)
+printf("Fizz ");
+else if (count == 100)
 printf("Buzz");
-if ((i % 3 != 0) && (i % 5 != 0))
-printf("%d", i);
-printf("\n");
+else if ((count % 5) == 0 && (count % 3) != 0)
+printf("Buzz ");
+else if ((count % 3) == 0 && (count % 3) == 0)
+printf("FizzBuzz ");
+else
+printf("%d ", count);
 }
+printf("\n");
 return (0);
 }

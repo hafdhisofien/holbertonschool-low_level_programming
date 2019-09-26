@@ -6,12 +6,12 @@
  */
 void print_square(int size)
 {
-int count, count2;
+int i, j;
 if (size <= 0)
 _putchar('\n');
-for (count = 0; count < size; count++)
+for (i = 0; i < size; i++)
 {
-for (count2 = 0; count2 < size; count2++)
+for (j = 0; j < size; j++)
 {
 _putchar('#');
 }
