@@ -1,28 +1,34 @@
 #include "holberton.h"
 /**
- * is_prime_number - function
- * @n: int
- * Return: Always 0
+ * prime_counter - Increments i to test if prime can be divided by it
+ * @i: The number to divide prime by
+ * @prime: The number to check against count
+ *
+ * Return: 1 if the number is prime, 0 otherwise.
  */
-int is_prime_number(int n)
+
+int prime_counter(int i, int prime)
 {
-return (primeornot(2, n));
+if (prime < 0)
+return (0);
+if (i == prime)
+return (1);
+if (prime % i == 0)
+return (0);
+else
+return (prime_counter(++i, prime));
 }
 
 /**
- * primeornot - primary or not
- * @i: integer
- * @n: Number
- * Return: 0 or 1
+ * is_prime_number - Checks if a number is prime
+ * @n: The number to be checked
+ *
+ * Return: 1 if number is prime, 0 otherwise
  */
-int primeornot(int i, int n)
+
+int is_prime_number(int n)
 {
-if (n <= 1)
+if (n == 1)
 return (0);
-else if (i >= n)
-return (1);
-if (n % i != 0 && i != n)
-return (primeornot(i + 1, n));
-else
-return (0);
+return (prime_counter(2, n));
 }

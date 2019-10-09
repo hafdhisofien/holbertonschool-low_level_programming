@@ -1,26 +1,29 @@
 #include "holberton.h"
+/**
+ * if_natural_square - check if a has natural square
+ * @x: int
+ * @y: int
+ * Return: return success
+ */
+int if_natural_square(int x, int y)
+{
+if (x == (y * y))
+return (y);
+if (y  * y  >  x)
+return (-1);
+else
+return (if_natural_square(x, y + 1));
+}
 
 /**
- *_sqrt_recursion - call function to verifiy squares
- *@n:int
- * Return: Always 0.
+ * _sqrt_recursion - Finds the natural square root of a number
+ * @n: int
+ * Return: success
  */
 int _sqrt_recursion(int n)
 {
-return (sqrcheker(0, n));
-}
-/**
- * sqrcheker - function to determine sqr on n numbers
- *@i:int
- *@n:int
- *Return: sqr
- */
-int sqrcheker(int i, int n)
-{
-if (i * i == n)
-return (i);
-else if (i < n)
-return (sqrcheker(i + 1, n));
-else
+if (n == 0)
 return (-1);
+else
+return (if_natural_square(n, 1));
 }
