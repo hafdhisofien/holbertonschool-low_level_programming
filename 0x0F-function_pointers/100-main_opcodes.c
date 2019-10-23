@@ -1,32 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * main - returns op codes for address of main
- * @argc: num of arguments
- * @argv: char array
- * Return: print opcodes
- */
+ * main - print out byte codes of itself
+ * @argc: number of args
+ * @argv: array of argument strings
+ * Return: int ... 0 = success, other numbers otherwise
+ **/
+
 int main(int argc, char *argv[])
 {
+int i;
+int num_bytes;
+char *byte;
 if (argc != 2)
 {
 printf("Error\n");
 exit(1);
 }
-char *s = (char *) &main;
-int num = atoi(argv[1]);
-int x;
-if (num < 0)
+num_bytes = atoi(argv[1]);
+if (num_bytes < 0)
 {
 printf("Error\n");
 exit(2);
 }
-x = 0;
-while (x < num)
+for (i = 0; i < num_bytes; i++)
 {
-printf("%.02hhx ", s[x]);
-x++;
-}
+byte = (unsigned char *)*(main + i);
+printf("%02x", *byte & 0xff);
+if (i == num_bytes - 1)
 printf("\n");
+else
+printf(" ");
+}
 return (0);
 }
