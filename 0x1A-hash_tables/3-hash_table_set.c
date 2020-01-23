@@ -19,7 +19,7 @@ if (ht == NULL || key == NULL || ht->array == NULL || value == NULL)
 return (0);
 if (strcmp(key, "") == 0)
 return (0);
-i = key_i((unsigned char *)key, ht->size);
+i = key_index((unsigned char *)key, ht->size);
 new = malloc(sizeof(hash_node_t));
 if (new == NULL)
 return (0);
