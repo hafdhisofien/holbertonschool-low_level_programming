@@ -17,7 +17,7 @@ new->array = malloc(sizeof(hash_node_t *) * size);
 if (new->array == NULL)
 {
 free(new);
-new_table = NULL;
+new = NULL;
 return (NULL);
 }
 while (i < size)
